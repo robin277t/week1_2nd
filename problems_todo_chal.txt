@@ -1,0 +1,31 @@
+1. Describe the Problem
+
+    Put or write the user story here. Add any clarifying notes you might have.
+
+    as a user
+    so that i can keep track of my tasks
+    i want to check if a string includes the string #todo
+
+2. Design the Method Signature
+
+    Include the name of the methods, its parameters, return value, and side effects.
+
+    method named todo_checker, takes a string as an argument
+    returns a fail message if no string or blank string is input
+    otherwise, use string.include? and then the substring #TODO in upcase to return true or false
+
+3. Create Examples as Tests
+
+    Make a list of the examples of what the methods will take and return. Encode each example as a test. You add to the above as you go.
+
+    test 1: fail message if string input is ""
+    test 2: input "this is a string" => false
+    test 3: input "#todo this task dude" => false
+    test 4: input "#TODO this task dude" => true
+    test 5: input "this task will need a #TODO my friend" => true
+
+
+4. Implement the Behaviour
+
+    After each test you write, follow the test-driving process of red, green, refactor to implement the behaviour.
+
