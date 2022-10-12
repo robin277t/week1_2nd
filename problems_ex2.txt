@@ -1,0 +1,29 @@
+1. Describe the Problem
+
+    Put or write the user story here. Add any clarifying notes you might have.
+    As a user
+    So that I can improve my grammar
+    I want to verify that a text starts with a capital letter 
+    and ends with a suitable sentence-ending punctuation  mark.
+
+2. Design the Method Signature
+
+    Include the name of the methods, its parameters, return value, and side effects.
+    method called grammer_check. takes a string as an argument
+    checks that string[0] is upcase and string[-1] in (. ! ?)
+    returns true if both above are true, else false
+
+3. Create Examples as Tests
+
+    Make a list of the examples of what the methods will take and return. Encode each example as a test. You add to the above as you go.
+    text "hello there sir!" is false
+    text "Hello there sir" is false
+    text "Hello there sir?" is true
+    text "Hello There Sire!" is true
+    text "hello there sir." is false
+
+
+4. Implement the Behaviour
+
+    After each test you write, follow the test-driving process of red, green, refactor to implement the behaviour.
+

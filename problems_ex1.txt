@@ -1,0 +1,28 @@
+1. Describe the Problem
+
+    Put or write the user story here. Add any clarifying notes you might have.
+
+    As a user
+    So that I can manage my time
+    I want to see an estimate of the reading time for a text, assuming that I can read 200 words a minute.
+
+2. Design the Method Signature
+
+    Include the name of the methods, its parameters, return value, and side effects.
+
+    Method called 'read_time'. Takes an argument of a string (only)
+    If not nil, and convert to string, will return string.split.length/200 + "minutes", may need a to float conversion?
+    no side effects
+
+3. Create Examples as Tests
+
+    Make a list of the examples of what the methods will take and return. Encode each example as a test. You add to the above as you go.
+    input "hello" *500 and expect answer to be 2.5 minutes
+    input 0 and expect answer to be 0.005 minutes
+    input "hello" *200 and expect answer to be 1 minute
+    **note the plural of minute(s) (just use m instead)
+
+4. Implement the Behaviour
+
+    After each test you write, follow the test-driving process of red, green, refactor to implement the behaviour.
+
