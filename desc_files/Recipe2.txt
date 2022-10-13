@@ -1,0 +1,25 @@
+1. Describe the Problem
+
+    Put or write the user story here. Add any clarifying notes you might have.
+
+    
+
+2. Design the Class interface
+
+    The design of its initializer and the parameters it takes.
+    
+    The design of its public methods, including:
+        Their names and purposes
+        What parameters they take and the data types.
+        What they return and that data type
+        Any other side effects they might have
+    
+
+3. Create Examples as Tests
+
+    Make a list of the examples of what the methods will take and return. Encode each example as a test. You add to the above as you go.
+
+4. Implement the Behaviour
+
+    After each test you write, follow the test-driving process of red, green, refactor to implement the behaviour.
+

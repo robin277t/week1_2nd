@@ -1,0 +1,58 @@
+1. Describe the Problem
+
+    Put or write the user story here. Add any clarifying notes you might have.
+
+As a user
+So that I can keep track of my tasks
+I want a program that I can add todo tasks to and see a list of them.
+
+As a user
+So that I can focus on tasks to complete
+I want to mark tasks as complete and have them disappear from the list.
+
+2. Design the Class Interface
+
+    The name of the class and the design of its initializer and the parameters it takes.
+
+    The design of its public methods, including:
+        Their names and purposes
+        What parameters they take and the data types.
+        What they return and that data type
+        Any other side effects they might have
+    
+Class Todolist - no args
+    init with blank array called list
+
+    first method called add_tasks, which accepts a string as an argument
+    method inserts strings into array, doesn't return anything
+
+    second method called view_tasks
+    takes no args, just returns the array list
+
+    third method called complete_tasks
+    takes a string as an argument, and if matches, removes from list
+
+    no side effects, just remember to error out on blank list
+    
+
+
+3. Create Examples as Tests
+
+    Make a list of the examples of what the methods will take and return. Encode each example as a test. You add to the above as you go.
+
+
+    test2, test method add_tasks, call it once, then twice and then call view_tasks
+
+    test3, test view_tasks produces message if empty
+
+    test4, test complete_tasks by calling add once, then calling remove once with the same string, should = fail message on view
+
+    test5, test complete_tasks by calling add twice, then calling remove once with a matching string, view should produce once
+
+    test6, test complete_tasks by calling add twice, then calling remove once with a NON matching string, should produce error message
+
+
+4. Implement the Behaviour
+
+    After each test you write, follow the test-driving process of red, green, refactor to implement the behaviour.
+
