@@ -1,0 +1,43 @@
+1. Describe the Problem
+
+    Put or write the user story here. Add any clarifying notes you might have.
+
+    As a user
+So that I can keep track of my music listening
+I want to add tracks I've listened to and see a list of them.
+
+2. Design the Class interface
+
+    The design of its initializer and the parameters it takes.
+    
+    The design of its public methods, including:
+        Their names and purposes
+        What parameters they take and the data types.
+        What they return and that data type
+        Any other side effects they might have
+
+        Class called Musiclist
+        initialize with no arguments, and a blank array @tracklist
+
+        Contains a method (track_adder), which takes ONLY a string as an arg, pushes into array @tracklist if not already in to avoid duplicates
+
+        Contains a method (list_viewer), which takes no args, returns array @tracklist
+
+        Assume any string can be entered as a track title, but not a blank
+
+        no side effects I can think of...
+    
+
+3. Create Examples as Tests
+
+    Make a list of the examples of what the methods will take and return. Encode each example as a test. You add to the above as you go.
+
+    test1: check blank tracklist. should return [] if no input has been called
+    test2: check @tracklist = ["first"] if track_adder("first") has been called
+    test3: check @tracklist = ["first","drums"] if track_adder(["first","drums"]) has been called
+    test4: check @tracklist = ["first","drums","drums"] if track_adder("first"), then track_adder("drums") have been called (twice)
+
+4. Implement the Behaviour
+
+    After each test you write, follow the test-driving process of red, green, refactor to implement the behaviour.
+
