@@ -1,24 +1,24 @@
 # File: lib/diary.rb
 class Diary
     def initialize
-        @array = []
+        @entries = []
     end
   
     def add(entry) # entry is an instance of DiaryEntry
       # Returns nothing
-      @array.push(entry)
+      @entries.push(entry)
     end
   
     def all
       # Returns a list of instances of DiaryEntry
-        @array
+        @entries
     end
   
     def count_words
       # Returns the number of words in all diary entries
       # HINT: This method should make use of the `count_words` method on DiaryEntry.
       counter = 0  
-      @array.each{|con| counter += con.count_words}
+      @entries.each{|con| counter += con.count_words}
       counter
     end
   
@@ -26,6 +26,7 @@ class Diary
                           # the number of words the user can read per minute
       # Returns an integer representing an estimate of the reading time in minutes
       # if the user were to read all entries in the diary.
+      (count_words/wpm.to_f).ceil
     end
   
     def find_best_entry_for_reading_time(wpm, minutes)
@@ -36,22 +37,26 @@ class Diary
       # Returns an instance of diary entry representing the entry that is closest 
       # to, but not over, the length that the user could read in the minutes they
       # have available given their reading speed.
+        #look through @entries array, use DiaryEntry.reading_time 
+        x = entries.each {|entry| entry.reading_time(wpm)}.max
+        return x
     end
   end
-  
+
   # File: lib/diary_entry.rb 
   class DiaryEntry
     def initialize(title, contents) # title, contents are strings
       @title = title
       @contents = contents.to_s
+      @start = 0
     end
   
     def title
-      # Returns the title as a string
+      @title
     end
   
     def contents
-      # Returns the contents as a string
+      @contents
     end
   
     def count_words
@@ -63,6 +68,7 @@ class Diary
                           # the number of words the user can read per minute
       # Returns an integer representing an estimate of the reading time in minutes
       # for the contents at the given wpm.
+      (count_words/wpm.to_f).ceil
     end
   
     def reading_chunk(wpm, minutes) # `wpm` is an integer representing the number
@@ -74,5 +80,15 @@ class Diary
       # If called again, `reading_chunk` should return the next chunk, skipping
       # what has already been read, until the contents is fully read.
       # The next call after that it should restart from the beginning.
+
+      @start !=0 ? i1 = @start : i1 = 0
+      chunk = (minutes.to_f * wpm.to_f).ceil
+      if (@start) > (@contents.split.length)-1
+        @start = 0
+        i1 = 0
+      else 
+        @start += chunk
+      end
+      @contents.split.slice(i1,chunk).join(" ")
     end
   end
