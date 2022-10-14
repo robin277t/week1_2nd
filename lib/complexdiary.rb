@@ -37,11 +37,24 @@ class Diary
       # Returns an instance of diary entry representing the entry that is closest 
       # to, but not over, the length that the user could read in the minutes they
       # have available given their reading speed.
-        #look through @entries array, use DiaryEntry.reading_time 
-        x = entries.each {|entry| entry.reading_time(wpm)}.max
-        return x
+
+            new_arr = []
+            @entries.each do |thing|
+                if thing.count_words < (wpm * minutes)
+                    new_arr.push(thing.count_words)
+                else
+                    next
+                end
+            end
+            if new_arr == []
+                fail "nothing short enough"
+            else
+                @entries.select {|title| title.count_words == new_arr.max}
+            end
+         #return new_arr
     end
-  end
+  
+end
 
   # File: lib/diary_entry.rb 
   class DiaryEntry

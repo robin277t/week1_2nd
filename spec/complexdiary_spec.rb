@@ -162,25 +162,48 @@ describe Diary do
 
         it "find best entry 1" do
             diary = Diary.new
+            thought1 = DiaryEntry.new("tuesday thoughts",("hello "*22))
+            thought2 = DiaryEntry.new("weds thoughts",("hey "*23))
+            thought3 = DiaryEntry.new("thurs thoughts",("yo "*29))
+            diary.add(thought1)
+            diary.add(thought2)
+            diary.add(thought3)
+            expect(diary.find_best_entry_for_reading_time(5,6)).to eq [thought3]
+        end
+
+        it "find best entry 2" do
+            diary = Diary.new
             thought1 = DiaryEntry.new("tuesday thoughts",("hello "*201))
             thought2 = DiaryEntry.new("weds thoughts",("hey "*303))
             thought3 = DiaryEntry.new("thurs thoughts",("yo "*404))
             diary.add(thought1)
             diary.add(thought2)
             diary.add(thought3)
-            expect(diary.find_best_entry_for_reading_time(50,5)).to eq "thought1"
+            expect(diary.find_best_entry_for_reading_time(398,1)).to eq [thought2]
         end
 
-        #it "find best entry 1" do
-        #    diary = Diary.new
-        #    thought1 = DiaryEntry.new("tuesday thoughts",("hello "*201))
-        #    thought2 = DiaryEntry.new("weds thoughts",("hey "*303))
-        #    thought3 = DiaryEntry.new("thurs thoughts",("yo "*404))
-        #    diary.add(thought1)
-        #    diary.add(thought2)
-        #    diary.add(thought3)
-        #    expect(diary.find_best_entry_for_reading_time(398,1)).to eq "thought2"
-        #end
+        it "find best entry 3" do
+            diary = Diary.new
+            thought1 = DiaryEntry.new("tuesday thoughts",("hello "*201))
+            thought2 = DiaryEntry.new("weds thoughts",("hey "*303))
+            thought3 = DiaryEntry.new("thurs thoughts",("yo "*404))
+            diary.add(thought1)
+            diary.add(thought2)
+            diary.add(thought3)
+            expect(diary.find_best_entry_for_reading_time(250,1)).to eq [thought1]
+        end
+
+        it "find best entry 4" do
+            diary = Diary.new
+            thought1 = DiaryEntry.new("tuesday thoughts",("hello "*201))
+            thought2 = DiaryEntry.new("weds thoughts",("hey "*303))
+            thought3 = DiaryEntry.new("thurs thoughts",("yo "*404))
+            diary.add(thought1)
+            diary.add(thought2)
+            diary.add(thought3)
+            expect{diary.find_best_entry_for_reading_time(100,1)}.to raise_error "nothing short enough"
+        end
+
 
 
     end
