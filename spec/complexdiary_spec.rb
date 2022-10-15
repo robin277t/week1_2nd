@@ -190,7 +190,7 @@ describe Diary do
             diary.add(thought1)
             diary.add(thought2)
             diary.add(thought3)
-            expect(diary.find_best_entry_for_reading_time(250,1)).to eq [thought1]
+            expect(diary.find_best_entry_for_reading_time(290,1)).to eq [thought1]
         end
 
         it "find best entry 4" do
