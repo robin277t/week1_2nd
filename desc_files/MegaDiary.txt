@@ -1,0 +1,60 @@
+1. Describe the Problem
+
+As a user
+So that I can record my experiences
+I want to keep a regular diary
+
+As a user
+So that I can reflect on my experiences
+I want to read my past diary entries
+
+As a user
+So that I can reflect on my experiences in my busy day
+I want to select diary entries to read based on how much time I have and my reading speed
+
+As a user
+So that I can keep track of my tasks
+I want to keep a todo list along with my diary
+
+As a user
+So that I can keep track of my contacts
+I want to see a list of all of the mobile phone numbers in all my diary entries
+
+Remember that user stories don't map to classes 1:1. You'll need to digest the full problem and then develop a multi-class system that meets the user's needs.
+
+    
+
+2. Design the Class interface (PLANNED DESIGN VERSION)
+
+Design a multi-class system, diagram out the classes and their relationships. Focus on important details, not completeness. Consider diagramming.
+
+
+CLASS1 - Diary (imagine this like a physical book). Inludes ability to add, and various read options, thoughts, todo lists, phone numbers of contacts
+
+CLASS2 - Entry (thought). Imgine this is like an individual thought
+
+CLASS3 - ENTRY (todo)
+
+CLASS4 - Entry (contact)
+    takes 2 arguments, name and phone number
+    initialize 
+
+    The design of each class initializer and the parameters it takes.
+    
+    The design of each class' public methods, including:
+        Their names and purposes
+        What parameters they take and the data types.
+        What they return and that data type
+        Any other side effects they might have
+    
+
+3. Create Examples as Tests
+
+    INTEGRATION TESTS: Create examples of the classes being used together in different situations and combinations that reflect the ways in which the system will be used.
+
+    UNIT TESTS: Create examples, where appropriate, of the behaviour of each relevant class at a more granular level of detail.
+
+4. Implement the Behaviour
+
+    After each test you write, follow the test-driving process of red, green, refactor to implement the behaviour.
+
