@@ -24,7 +24,7 @@ describe Diary do
     context 'Pairs integration tests count words output' do
         it "returns 1 word from single integer diary entry" do
         diary = Diary.new
-        thought1 = DiaryEntry.new("tuesday thoughts",(5))
+        thought1 = DiaryEntry.new("tuesday thoughts","5")
         diary.add(thought1)
         expect(diary.count_words).to eq(1)
         end
@@ -119,16 +119,17 @@ describe Diary do
             expect(result).to eq "c c c c"
         end
 
+#=begin
         it "extra check on split length string 1" do
-            example = DiaryEntry.new("","c c c c c c c d e f g h i j k l m n p")
+            example = DiaryEntry.new("nae","c c c c c c c d e f g h i j k l m n p")
             example.reading_chunk(10,1)
             example.reading_chunk(2,2)
             example.reading_chunk(4,1)
             result = example.reading_chunk(4,1)
             expect(result).to eq "p"
         end
-
-        it "extra check on split length string 1" do
+#=end
+        it "extra check on split length string 2" do
             example = DiaryEntry.new("","c c c c c c c d e f g h i j k l m n p")
             example.reading_chunk(10,1)
             example.reading_chunk(2,2)

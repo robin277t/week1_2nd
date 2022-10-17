@@ -17,9 +17,7 @@ class Diary
     def count_words
       # Returns the number of words in all diary entries
       # HINT: This method should make use of the `count_words` method on DiaryEntry.
-      counter = 0  
-      @entries.each{|con| counter += con.count_words}
-      counter
+      return @entries.sum(&:count_words)
     end
   
     def reading_time(wpm) # wpm is an integer representing
@@ -51,7 +49,6 @@ class Diary
             else
                 @entries.select {|title| title.count_words == new_arr.max}
             end
-         #return new_arr
     end
   
 end
@@ -96,7 +93,7 @@ end
 
       @start !=0 ? i1 = @start : i1 = 0
       chunk = (minutes.to_f * wpm.to_f).ceil
-      if (@start) > (@contents.split.length)-1
+      if @start >= (@contents.split.length)
         @start = 0
         i1 = 0
       else 
