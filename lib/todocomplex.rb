@@ -19,11 +19,7 @@ class TodoList
     end
   
     def give_up!
-      @notdone.each {|task| 
-        @done.push(task)
-        @notdone.delete(task)
-    }
-      #@notdone = []
+      @notdone.each {|task| @done.push(task), @notdone.delete(task)}
     end
   end
   
