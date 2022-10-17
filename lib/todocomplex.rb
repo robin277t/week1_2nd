@@ -9,11 +9,11 @@ class TodoList
     end
   
     def incomplete
-        @list.select{|incom| incom.done? == false}.map{|incom2| incom2.task}
+        @list.select{|incom| incom.done == false}.map{|incom2| incom2.task}
     end
   
     def complete
-        @list.select{|com| com.done?}.map{|com2| com2.task}
+        @list.select{|com| com.done}.map{|com2| com2.task}
     end
   
     def give_up!
@@ -23,11 +23,11 @@ class TodoList
   
   # File: lib/todo.rb
   class Todo
+    attr_accessor :done
     def initialize(task) 
         fail "you input nothing..." unless task != ""
         @task = task.to_s
-        @done = false
-        
+        @done = false  
     end
   
     def task
@@ -38,7 +38,7 @@ class TodoList
         @done = true
     end
   
-    def done?
-        @done
-    end
+  #  def done?
+  #      @done
+  #  end
   end

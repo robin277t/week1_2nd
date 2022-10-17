@@ -22,7 +22,7 @@ RSpec.describe "todo complex challenge tests: " do
             item1 = Todo.new("get milk")
             item2 = Todo.new("get milk")
             item1.mark_done!
-            expect(item1.done?).to eq true
+            expect(item1.done).to eq true
         end
     
     end
