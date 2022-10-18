@@ -29,15 +29,42 @@ Remember that user stories don't map to classes 1:1. You'll need to digest the f
 Design a multi-class system, diagram out the classes and their relationships. Focus on important details, not completeness. Consider diagramming.
 
 
-CLASS1 - Diary (imagine this like a physical book). Inludes ability to add, and various read options, thoughts, todo lists, phone numbers of contacts
+CLASS1 - Diary (imagine this like a physical book). 
+    -Takes no arguments
+    -Initialize with no instance variables
+    -Method1 - Add ThoughtEntry to array (thoughts)
+    -Method2 - Add TodoEntry to array (list)
+    -Method3 - View Todo list (plus numbers)
+    -Method4 - View list of past diary entries (plus numbers)
+    -Method5 - View specific diary Entry text (plus numbers)
+    -Method6 - Given 2x arguments, read_speed and has_time, return list of diary entries that can be read (plus numbers)
+    -Method7 - Given 2x arguments, read_speed and has_time, return diary entry text of longest entry that can be read
 
-CLASS2 - Entry (thought). Imgine this is like an individual thought
+Inludes ability to add, and various read options, thoughts, todo lists, phone numbers of contacts
 
-CLASS3 - ENTRY (todo)
+CLASS2 - ThoughtEntry
+    -Takes 2 arguments, day (string) and thought(string)
+    -Initialize with 2x instance variables, @date and @thought
+    -Method1, return reading time of thought given 2x arguments, read_speed and has_time  
 
-CLASS4 - Entry (contact)
-    takes 2 arguments, name and phone number
-    initialize 
+CLASS3 - TodoEntry
+    -Takes 1 argument (a string)
+    -Initialize with 1x instance variable, @task
+    -Method1, mark task as done
+    -Method2, mark task as not done if done
+    -Method3, check status of task done or not done (boolean)
+
+
+CLASS4 - ContactEntry
+    - Takes 2 arguments, name as string and phone number as integer
+    - Initialize with 2x instance variables, @name and @number, which will also be made attr_accessor (is this needed?)
+    - Method1 - make @name and @number into a hash for printing out with 'all diary entries'
+    NOTE no explicit reference to the below methods being needed in the specs file, just for fun
+    - Method2 - edit number
+    - Method3 - edit name
+
+
+
 
     The design of each class initializer and the parameters it takes.
     
